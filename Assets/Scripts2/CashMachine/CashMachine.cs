@@ -2,14 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-abstract public class CashMachine
+public abstract class CashMachine
 {
-    public string Name { get; set; }
+    /// <summary>
+    /// Название машины
+    /// </summary>
+    public string Name { get; protected set; }
 
-    public CashMachine(string name)
-    {
-        Name = name;
-    }
-
-    abstract public Money[] Create(int pageCount); 
+    /// <summary>
+    /// Печать листов
+    /// </summary>
+    public abstract Money[] Create(int pageCount);
 }

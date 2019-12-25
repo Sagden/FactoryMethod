@@ -2,14 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-abstract public class Money
+public abstract class Money
 {
-    public string Name { get; set; }
-    public string Symbol { get; set; }
+    /// <summary>
+    /// Название валюты
+    /// </summary>
+    public string Name { get; protected set; }
 
-    public Money(string name, string symbol)
-    {
-        Name = name;
-        Symbol = symbol;
-    }
+    /// <summary>
+    /// Символ валюты
+    /// </summary>
+    public string Symbol { get; protected set; }
+
+    /// <summary>
+    /// Номинал валюты
+    /// </summary>
+    public int Nominal { get; protected set; }
 }
