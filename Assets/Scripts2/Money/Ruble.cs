@@ -2,16 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Ruble : Money
+public sealed class Ruble : Money
 {
-    public int Number { get; set; }
-    public int Nominal { get; set; }
+    /// <summary>
+    /// Уникальный номер
+    /// </summary>
+    public int UniqueNumber { get; private set; }
 
-    public Ruble(int nominal) : base ("Российский рубль", "Р")
+    public Ruble(int nominal, int uniqueNumber)
     {
-        var random = new System.Random();
+        Name = "Российский рубль";
+        Symbol = "Р";
 
-        Number = random.Next(1000000, 9999999);
         Nominal = nominal;
+        UniqueNumber = uniqueNumber;
     }
 }

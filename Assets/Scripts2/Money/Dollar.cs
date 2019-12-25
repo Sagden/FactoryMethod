@@ -3,14 +3,19 @@ using System.Collections.Generic;
 using System;
 using UnityEngine;
 
-public class Dollar : Money
+public sealed class Dollar : Money
 {
-    public Guid Number { get; set; }
-    public int Nominal { get; set; }
+    /// <summary>
+    /// Уникальный номер
+    /// </summary>
+    public Guid UniqueNumber { get; private set; }
 
-    public Dollar(int nominal) : base ("American Dollar", "$")
+    public Dollar(int nominal)
     {
-        Number = Guid.NewGuid();
+        Name = "American Dollar";
+        Symbol = "$";
+
         Nominal = nominal;
+        UniqueNumber = Guid.NewGuid();
     }
 }
